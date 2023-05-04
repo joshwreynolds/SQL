@@ -1,0 +1,30 @@
+--Create a store inventory
+
+
+CREATE TABLE store_inventory (id INTEGER PRIMARY KEY, item TEXT, aisle INTEGER, quantity INTEGER, cost INTEGER);
+
+INSERT INTO store_inventory VALUES
+(1, "Shirt", 1, 23, 5),
+(2, "Pants", 5, 16, 12),
+(3, "Cards", 6, 14, 2),
+(4, "Apples", 8, 203, 1),
+(5, "Oranges", 9, 132, 1),
+(6, "Paperclips", 10, 1234, 1),
+(7, "Baseballs", 9, 12, 2),
+(8, "Basketball", 2, 13, 2),
+(9, "Soccer", 3, 15, 2),
+(10, "Paper", 1, 26, 3),
+(11, "Books", 1, 35, 5),
+(12, "Desks", 13, 3, 234),
+(13, "Underwear", 4, 57, 4),
+(14, "Notebooks", 6, 89, 7),
+(15, "Stapler", 4, 9, 8);
+
+--display the database ordered by aisle.
+SELECT * FROM store_inventory
+GROUP BY aisle;
+
+--what are the top 5 items in inventory by quantity?
+SELECT * FROM store_inventory
+ORDER BY quantity desc
+LIMIT 5;
