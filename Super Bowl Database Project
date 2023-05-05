@@ -77,9 +77,36 @@ FROM superbowls;
 SELECT Loser, SB, MAX(Loser_pts) AS "Most_SBloser_points"
 FROM superbowls;
 
-SELECT COUNT(*),
-CASE
-WHEN Winner = New England Patriots THEN
-
+SELECT ROUND(AVG(Winner_pts - Loser_pts)) "Average Pont Differential"
 FROM superbowls;
+
+SELECT Winner, COUNT(*) AS "Super Bowl Wins"
+FROM superbowls
+GROUP BY Winner
+ORDER BY COUNT(*) desc;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
